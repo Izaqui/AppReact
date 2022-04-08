@@ -1,3 +1,4 @@
+import { Link } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Button, TextInput, View,StyleSheet, Text, Image } from 'react-native';
 import acessaBackend from '../../api/axios';
@@ -25,7 +26,6 @@ const data ={
   }
 }
 
-  const newLocal = "Sobre";
   return (
   
   <View style={styles.container}>
@@ -46,7 +46,8 @@ const data ={
     <Button title="logar" onPress={handleLogar}/>
 
     <Text>{status}</Text>
-    <Text style={styles.text}>Não tem conta?</Text>
+    <Text style={styles.text}>Não possui conta?</Text>
+    <Link style={styles.link} to="/Cadastro/">Cadastro-se</Link>
   </View>
   
 );
@@ -78,6 +79,11 @@ const styles = StyleSheet.create({
   },
   text:{
     fontSize:30,
+  },
+  link:{
+    fontSize:25,
+    color:'#7CFC00',
+
   }
 })
 
